@@ -13,7 +13,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/AdminLTE.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
@@ -72,12 +72,12 @@
         </li>  
         <li>
           <a href="pages/widgets.html">
-            <i class="glyphicon glyphicon-info-sign"></i> <span>Laboratorinis darbo aprašymas</span>
+            <i class="glyphicon glyphicon-info-sign"></i> <span>Aprašymas</span>
           </a>
         </li>
         <li>
           <a href="pages/widgets.html">
-            <i class="glyphicon glyphicon-info-sign"></i> <span>Laboratorinis darbo skaičiavimai</span>
+            <i class="glyphicon glyphicon-info-sign"></i> <span>Skaičiavimai</span>
           </a>
         </li>   
         <li>
@@ -135,7 +135,7 @@
           </div>
             <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="50"
                 data-slider-orientation="horizontal" />
-            <span id="ex6SliderVal">50</span>
+            <span id="ex6SliderVal" style="font-size: 250%"><h1>50</h1></span>
          
         </div>
         <!-- ./col -->
@@ -153,38 +153,75 @@
       <div class="row">
         <!-- Left col -->
         <section class="col-lg-6 connectedSortable">
-          <!-- Custom tabs (Charts with tabs)-->
-          <div class="nav-tabs-custom">
-            <!-- Tabs within a box -->
-            <ul class="nav nav-tabs pull-right">
-              <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-              <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-              <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
-            </ul>
-            <div class="tab-content no-padding">
-              <!-- Morris chart - Sales -->
-              <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Varža</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
             </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+              <h3 id="varza">null</h3>
+            </div>
+            <!-- /.box-body -->
           </div>
-          <!-- /.nav-tabs-custom -->
         </section>
+
         <section class="col-lg-6 connectedSortable">
-          <!-- Custom tabs (Charts with tabs)-->
-          <div class="nav-tabs-custom">
-            <!-- Tabs within a box -->
-            <ul class="nav nav-tabs pull-right">
-              <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-              <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-              <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
-            </ul>
-            <div class="tab-content no-padding">
-              <!-- Morris chart - Sales -->
-              <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Įtampa</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
             </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+              <h3 id="itampa">null</h3>
+            </div>
+            <!-- /.box-body -->
           </div>
-          <!-- /.nav-tabs-custom -->
+        </section>
+
+        <section class="col-lg-6 connectedSortable">
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Srovės stiprio priklausomybė nuo įtampos</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>              
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="lineChart" style="height:250px"></canvas>
+              </div>
+            </div>
+        </section>
+
+        <section class="col-lg-6 connectedSortable">
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Varžos priklausomybė nuo laido ilgio</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="lineChart" style="height:250px"></canvas>
+              </div>
+            </div>
         </section>
        
 
@@ -195,10 +232,9 @@
       <!-- /.row (main row) -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2017
   </footer>
 </div>
 <!-- ./wrapper -->
