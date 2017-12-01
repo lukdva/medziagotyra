@@ -8,7 +8,7 @@ $(function () {
 
     $("#ex1").on("slide", function(slideEvt) {
         updateValues();
-	$("#ex6SliderVal").html('<h1>'+slideEvt.value+'</h1>');
+	$("#ex6SliderVal").html('<h1>'+slideEvt.value+ ' cm' + '</h1>');
 });
 
 //I knob
@@ -49,6 +49,9 @@ function updateValues() {
     var itampa = srovesStipris * varza;
     console.log("Įtampa: " + itampa + " V");
     $("#itampa").text(itampa + " V");
+
+    drawGraphStipris(varza);
+    drawGraphVarzaNuoIlgio(laidoPlotas,savitasisTankis);
 }
 
 function drawGraphStipris(varza) {
