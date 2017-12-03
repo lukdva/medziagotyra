@@ -18,7 +18,6 @@ $(".knob").knob({
                         //console.log("change : " + value);
                     },
                     release : function (value) {
-
                     },
                     cancel : function () {
                         console.log("cancel : ", this);
