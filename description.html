@@ -65,17 +65,17 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Navigacija</li>
-        <li >
+        <li>
           <a href="index.html">
             <i class="fa fa-home"></i> <span>Laboratorinis darbas</span>
           </a>
         </li>
-        <li class="active">
+        <li>
           <a href="description.html">
             <i class="glyphicon glyphicon-info-sign"></i> <span>Aprašymas</span>
           </a>
         </li>
-        <li>
+        <li class="active">
           <a href="about.html">
             <i class="glyphicon glyphicon-user"></i> <span>Apie</span>
           </a>
@@ -90,136 +90,14 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        1 laboratorinis darbas
+        Laidininko savitosios varžos nustatymas
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box">
-              <label>Srovė stipris</label>
-          </div>
-              <input class="knob" data-width="150" data-cursor=true data-fgColor="#222222" data-bgColor="#7CFC00" data-thickness=.3 value="1" data-min="1" data-max="50">
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box">
-              <label>Laido medžiaga</label>
-            </div>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.000000027" checked="checked">Aliuminis<br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.000000055">Volframas<br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.0000001"> Geležis <br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.000000022"> Auksas <br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.0000000172"> Varis <br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.000000016"> Sidabras <br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.000000107"> Platina <br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.0000005"> Konstantanas <br>
-                  <input type="radio" name="medziaga" id="medziaga" value="0.00000112"> Nichromas <br>
-
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box">
-            <label for="ex1">Laido ilgis</label>
-          </div>
-            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="50"
-                data-slider-orientation="horizontal" />
-            <span id="ex6SliderVal" style="font-size: 250%"><h1>50 cm</h1></span>
-
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box">
-            <label for="ex1">Laido skerspjūvio plotas</label>
-          </div>
-            <div id="canvas"></div>
-        </div>
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->
-      <!-- Main row -->
-      <div class="row">
-        <!-- Left col -->
-        <section class="col-lg-6 connectedSortable">
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Varža</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body" style="">
-              <h3 id="varza">null</h3>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </section>
-
-        <section class="col-lg-6 connectedSortable">
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Įtampa</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body" style="">
-              <h3 id="itampa">null</h3>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </section>
-
-        <section class="col-lg-6 connectedSortable">
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Srovės stiprio priklausomybė nuo įtampos</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <div id="chart1" style="width:100%;height:300px"></div>
-              </div>
-            </div>
-        </section>
-
-        <section class="col-lg-6 connectedSortable">
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Varžos priklausomybė nuo laido ilgio</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <div id="chart2" style="width:100%;height:300px"></div>
-              </div>
-            </div>
-        </section>
-
-
+    Darbą aprašymas
+    
 
         </section>
         <!-- right col -->
@@ -276,35 +154,6 @@
 <script type="text/javascript" src="dist/bootstrap-slider.min.js"></script>
 <script src="dist/popper.min.js"></script>
 <script src="dist/logic.js"></script>
-
-<script>
-  $(document).ready(
-    function(){updateValues();}
-    );
-
-    window.onload = function() {
-        var R = Raphael("canvas", 200, 200);
-        var c = R.circle(100, 100, 25).attr({
-            fill: "hsb(.8, 1, 1)",
-            stroke: "none",
-            opacity: .5
-        });
-        var start = function () {
-            // storing original coordinates
-            this.r = this.attr("r");
-            this.attr({opacity: 1});
-        },
-        move = function (dx, dy) {
-            // move will be called with dx and dy
-            this.attr({r: this.r + dy});
-        },
-        up = function () {
-            // restoring state
-            this.attr({opacity: .5});
-        };
-        c.drag(move, start, up);
-        };
-  </script>
 
 </body>
 </html>
