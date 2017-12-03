@@ -34,7 +34,7 @@ function updateValues() {
     var savitasisTankis = $( 'input[name=medziaga]:checked' ).val();
     var srovesStipris = $('.knob').val();
     var laidoIlgis = $("#ex1").val();
-    var laidoSpindulys = cicrleRadius /1000;
+    var laidoSpindulys = (cicrleRadius /1000)/2;
     var laidoPlotas = laidoSpindulys * laidoSpindulys * Math.PI;
     console.log("Laido spindulys: " + laidoSpindulys);
     console.log("Savitasis tankis: " + savitasisTankis);
@@ -50,7 +50,7 @@ function updateValues() {
     } else {
         $("#varza").text( mVarza + " mΩ");
     }
-    
+
 
     var itampa = srovesStipris * varza;
     var mItampa = Math.round(itampa*1000);
@@ -61,8 +61,8 @@ function updateValues() {
     else {
         $("#itampa").text( mItampa + " mV");
     }
-    
-   
+
+
 
     drawGraphStipris(varza);
     drawGraphVarzaNuoIlgio(laidoPlotas,savitasisTankis);
