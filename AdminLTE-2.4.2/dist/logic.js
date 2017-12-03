@@ -35,8 +35,9 @@ function updateValues() {
     var savitasisTankis = $( 'input[name=medziaga]:checked' ).val();
     var srovesStipris = $('.knob').val();
     var laidoIlgis = $("#ex1").val();
-    var laidoSpindulys = 0.00018;
+    var laidoSpindulys = cicrleRadius /1000;
     var laidoPlotas = laidoSpindulys * laidoSpindulys * Math.PI;
+    console.log("Laido spindulys: " + laidoSpindulys);
     console.log("Savitasis tankis: " + savitasisTankis);
     console.log("Srovės stipris: " + srovesStipris);
     console.log("Laido ilgis: " + laidoIlgis);
@@ -89,28 +90,5 @@ function drawGraphVarzaNuoIlgio(laidoPlotas, savitasisTankis) {
             axisLabel : 'Laido ilgis, m',
         }
     });
-
-// window.onload = function() {
-//     var R = Raphael("canvas", 500, 500);
-//     var c = R.circle(100, 100, 50).attr({
-//         fill: "hsb(.8, 1, 1)",
-//         stroke: "none",
-//         opacity: .5
-//     });
-//     var start = function () {
-//         // storing original coordinates
-//         this.r = this.attr("r");
-//         this.attr({opacity: 1});
-//     },
-//     move = function (dx, dy) {
-//         // move will be called with dx and dy
-//         this.attr({r: this.r + dy});
-//     },
-//     up = function () {
-//         // restoring state
-//         this.attr({opacity: .5});
-//     };
-//     c.drag(move, start, up);
-//     };
 
 }

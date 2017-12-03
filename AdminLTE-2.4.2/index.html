@@ -106,7 +106,7 @@
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box">
-              <label>Srovė stipris</label>
+              <label>Srovė stipris, A</label>
           </div>
               <input class="knob" data-width="150" data-cursor=true data-fgColor="#222222" data-bgColor="#7CFC00" data-thickness=.3 value="1" data-min="1" data-max="50">
         </div>
@@ -131,7 +131,7 @@
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box">
-            <label for="ex1">Laido ilgis</label>
+            <label for="ex1">Laido ilgis, cm</label>
           </div>
             <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="50"
                 data-slider-orientation="horizontal" />
@@ -142,9 +142,10 @@
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box">
-            <label for="ex1">Laido skerspjūvio plotas</label>
+            <label for="ex1">Laido skerspjūvio plotas, mm</label>
           </div>
-            <div id="canvas"></div>        
+          <span id="plotasValue" style="font-size: 250%"><h1>25 mm</h1></span>  
+            <div id="canvas"></div>                  
         </div>
         <!-- ./col -->
       </div>
@@ -223,9 +224,6 @@
               </div>
             </div>
         </section>
-       
-
-
         </section>
         <!-- right col -->
       </div>
@@ -283,8 +281,12 @@
 <script src="dist/logic.js"></script>
 
 <script>
+var cicrleRadius = 25;
+
   $(document).ready(
-    function(){updateValues();}
+    function(){
+      updateValues();
+    }
     );
   
     window.onload = function() {
@@ -297,15 +299,22 @@
         var start = function () {
             // storing original coordinates
             this.r = this.attr("r");
+            cicrleRadius = this.r;
             this.attr({opacity: 1});
         },
         move = function (dx, dy) {
-            // move will be called with dx and dy
+            // move will be called with dx and dy           
             this.attr({r: this.r + dy});
+            cicrleRadius = this.attr("r");
+            if(cicrleRadius < 0) {
+              cicrleRadius = 0;
+            }
+            $("#plotasValue").html('<h1>'+cicrleRadius+ ' mm' + '</h1>');
         },
         up = function () {
             // restoring state
             this.attr({opacity: .5});
+            updateValues();
         };
         c.drag(move, start, up);
         };
