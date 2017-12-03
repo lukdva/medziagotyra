@@ -44,11 +44,25 @@ function updateValues() {
 
     var varza =parseFloat((savitasisTankis * (laidoIlgis/100)) / laidoPlotas);
     console.log("Varža: " + varza + " Ω");
-    $("#varza").text(varza + " Ω");
+    var mVarza = Math.round(varza*1000);
+    if(mVarza > 1000) {
+        $("#varza").text( varza.toFixed(3) + " Ω");
+    } else {
+        $("#varza").text( mVarza + " mΩ");
+    }
+    
 
     var itampa = srovesStipris * varza;
+    var mItampa = Math.round(itampa*1000);
     console.log("Įtampa: " + itampa + " V");
-    $("#itampa").text(itampa + " V");
+    if(mItampa > 1000) {
+        $("#itampa").text( itampa.toFixed(3) + " V");
+    }
+    else {
+        $("#itampa").text( mItampa + " mV");
+    }
+    
+   
 
     drawGraphStipris(varza);
     drawGraphVarzaNuoIlgio(laidoPlotas,savitasisTankis);
