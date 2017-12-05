@@ -89,17 +89,17 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
+      <h1 style="font-size:2em">
         Laidininko savitosios varžos nustatymas
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
-    Darbą 
-    
 
-        </section>
+      <div id="includedContent"></div>
+
+    </section>
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
@@ -144,7 +144,7 @@
 <!-- FastClick -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="dist/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
@@ -154,6 +154,10 @@
 <script type="text/javascript" src="dist/bootstrap-slider.min.js"></script>
 <script src="dist/popper.min.js"></script>
 <script src="dist/logic.js"></script>
-
+<script>
+    $(function(){
+      $("#includedContent").load("aprasas.html");
+    });
+</script>
 </body>
 </html>

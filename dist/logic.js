@@ -23,7 +23,7 @@ $(".knob").knob({
                         console.log("cancel : ", this);
                     }
                 });
-
+$(".knob").on('wheel', function(value) {updateValues();} );
 //Detect changes
 $('input[name=medziaga]').change(function(){
     updateValues();
@@ -34,7 +34,7 @@ function updateValues() {
     var savitasisTankis = $( 'input[name=medziaga]:checked' ).val();
     var srovesStipris = $('.knob').val();
     var laidoIlgis = $("#ex1").val();
-    var laidoSpindulys = (cicrleRadius /1000)/2;
+    var laidoSpindulys = cicrleRadius /1000;
     var laidoPlotas = laidoSpindulys * laidoSpindulys * Math.PI;
     console.log("Laido spindulys: " + laidoSpindulys);
     console.log("Savitasis tankis: " + savitasisTankis);

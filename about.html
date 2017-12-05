@@ -97,7 +97,12 @@
     <!-- Main content -->
     <section class="content">
     Darbą atliko:
-    
+    <ul>
+      <li>Lukas Dvarionis IFC-4 gr. </li>
+      <li>Rimgailė Laužadytė IFB-4 gr. </li>
+      <li>Simona Šarlauskytė IFB-4 gr. </li>
+      <li>Tomas Valiūnas IF-4/4 gr. </li>
+    </ul>
 
         </section>
         <!-- right col -->
@@ -144,7 +149,7 @@
 <!-- FastClick -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="dist/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
@@ -154,35 +159,6 @@
 <script type="text/javascript" src="dist/bootstrap-slider.min.js"></script>
 <script src="dist/popper.min.js"></script>
 <script src="dist/logic.js"></script>
-
-<script>
-  $(document).ready(
-    function(){updateValues();}
-    );
-
-    window.onload = function() {
-        var R = Raphael("canvas", 200, 200);
-        var c = R.circle(100, 100, 25).attr({
-            fill: "hsb(.8, 1, 1)",
-            stroke: "none",
-            opacity: .5
-        });
-        var start = function () {
-            // storing original coordinates
-            this.r = this.attr("r");
-            this.attr({opacity: 1});
-        },
-        move = function (dx, dy) {
-            // move will be called with dx and dy
-            this.attr({r: this.r + dy});
-        },
-        up = function () {
-            // restoring state
-            this.attr({opacity: .5});
-        };
-        c.drag(move, start, up);
-        };
-  </script>
 
 </body>
 </html>
